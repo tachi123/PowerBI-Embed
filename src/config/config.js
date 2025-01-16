@@ -29,5 +29,6 @@ export default{
     port: process.env.PORT,
     google_client_email: process.env.GOOGLE_CLIENT_EMAIL,
     google_private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
-    mode: environment
+    mode: environment,
+    google_callback_url: process.env.GOOGLE_CALLBACK_URL
 }

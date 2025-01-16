@@ -1,0 +1,40 @@
+<!--h1>Datos de la hoja de cálculo</h1-->
+<hr>
+<div class="row">
+  {{#each sheetData}}
+  <div class="col-md-6">
+      <a class="panel panel-default" style="padding-top:0px" href="/dashboard/{{@index}}">
+        <div class="panel-body">
+          <h3>{{this.[0]}}</h3>
+          <p class="text-muted">{{this.[1]}}</p>
+        </div>
+      </a>
+    </div>
+  {{/each}} 
+</div>
+
+<!--table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Título</th>
+      <th scope="col">Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each sheetData}}
+
+      <tr>
+
+        <th scope="row">{{@index}}</th>
+        <td>{{this.[0]}}</td>
+        <td>{{this.[1]}}</td>
+        <td>
+            <a href="/embed/{{@index}}">Ver Tablero</a>
+        </td>
+      </tr>
+
+    {{/each}}
+
+  </tbody>
+</table-->

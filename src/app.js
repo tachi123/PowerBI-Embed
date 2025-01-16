@@ -31,9 +31,10 @@ const hbs = create({
         }
     }
   });
-  app.engine('.hbs', hbs.engine);
-  app.set('view engine', '.hbs');
-  app.set('views', __dirname + '/views');
+
+app.engine('.hbs', hbs.engine);
+app.set('view engine', '.hbs');
+app.set('views', __dirname + '/views');
 
 app.use(express.static(__dirname+ '/public'));
 
@@ -43,8 +44,10 @@ app.use(passport.session());
 
 // Rutas
 import indexRoutes from './routes/index.router.js';
+import dashboardRoutes from './routes/dashboard.router.js';
 import sessionRoutes from './routes/session.router.js';
 app.use('/', indexRoutes);
+app.use('/dashboard', dashboardRoutes);
 app.use('/auth', sessionRoutes);
 
 

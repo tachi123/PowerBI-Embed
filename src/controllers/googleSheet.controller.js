@@ -7,7 +7,7 @@ export const getListadoDashboards = async (req, res) => {
         const range = 'Hoja1!A:C'; 
         const sheetData = await getSheetData(spreadsheetId, range);
         //console.log(sheetData);
-        res.render('index', {
+        res.render('dashboardList', {
             sheetData,user:req.user,
             hasJumbotron: true,
             jumbotron_title: "Listado de dashboard",
@@ -25,7 +25,7 @@ export const getDashboard = async (req, res) => {
       const range = 'Hoja1!A:C'; 
       const sheetData = await getSheetData(spreadsheetId, range);
       //const script = sheetData[req.params.id][2]; // Asumiendo que el script está en la tercera columna
-      res.render('embed', { 
+      res.render('dashboard', { 
         title: sheetData[req.params.id][0],
         description: sheetData[req.params.id][1],
         urlDashboard: sheetData[req.params.id][2],

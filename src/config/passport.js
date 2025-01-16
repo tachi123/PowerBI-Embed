@@ -1,20 +1,18 @@
 import passport from 'passport';
 import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 import { getSheetData } from '../utils/googlesheet.js';
-import dotenv from 'dotenv';
-
-dotenv.config();
+import config from '../config/config.js';
 
 passport.use(
     new GoogleStrategy(
         {
-            clientID: process.env.GOOGLE_CLIENT_ID,
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-            callbackURL: "http://localhost:3000/auth/google/callback"
+            clientID: config.google_client_id,
+            clientSecret: config.google_client_secret,
+            callbackURL: config.google_callback_url
         },
         async (accessToken, refreshToken, profile, done) => {
             try {
-                const spreadsheetId = process.env.GOOGLE_SHEET_USUARIOS;
+                const spreadsheetId = config.google_sheet_usuarios;
                 const range = 'Hoja1!A:A';
 
                 const usuariosAutorizados = await getSheetData(spreadsheetId, range);
@@ -32,7 +30,6 @@ passport.use(
         }
     )
 );
-
 passport.serializeUser((user, done) => done(null, user));
 passport.deserializeUser((user, done) => done(null, user));
 

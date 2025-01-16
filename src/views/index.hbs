@@ -1,27 +1,39 @@
-<!--h1>Datos de la hoja de cálculo</h1-->
+<section class="p-t-0" style="padding-bottom: 140px;">
+  <div class="container m-t-2">
+    <div class="row text-center">
+      <div class="col-md-8 col-md-offset-2">
+        <h2 class="m-b-3">¿Por qué usar el Portal?</h2>
+      </div>
+        <div class="col-sm-4">
+          <i class="icono-arg-genero fa-4x text-primary"></i>
+          <h3>Experiencia unificada</h3>
+          <p></p>
+        </div>
+        <div class="col-sm-4 ">
+          <i class="icono-arg-sitios-accesibles fa-4x text-primary"></i>
+          <h3>Dashboards accesibles</h3>
+          <p></p>
+        </div>
+        <div class="col-sm-4">
+          <i class="icono-arg-reloj fa-4x text-primary"></i>
+          <h3>Menos tiempo de análisis</h3>
+          <p></p>
+        </div>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="row text-center">
+        <div class="col-sm-12">
+          <h2 class="m-b-3">Acerca del Portal</h2>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-12">
+          <p>El portal de visualización interno es administrado por la <strong>Dirección Nacional de Información y Estudios.</strong></p>
+        </div>
+      </div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Título</th>
-      <th scope="col">Descripción</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each sheetData}}
-
-      <tr>
-
-        <th scope="row">{{@index}}</th>
-        <td>{{this.[0]}}</td>
-        <td>{{this.[1]}}</td>
-        <td>
-            <a href="/embed/{{@index}}">Ver Tablero</a> <!-- {{this.[2]}} Asumiendo que el nombre del tablero está en la primera columna -->
-        </td>
-      </tr>
-
-    {{/each}}
-
-  </tbody>
-</table>
+    </div>
+  </div>
+</section>
