@@ -10,11 +10,11 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link href="poncho/css/poncho.min.css" rel="stylesheet">
-    <link href="poncho/css/roboto-fontface.css" rel="stylesheet">
-    <link href="poncho/css/icono-arg.css" rel="stylesheet"></head>
+    <link href="/poncho/css/poncho.min.css" rel="stylesheet">
+    <link href="/poncho/css/roboto-fontface.css" rel="stylesheet">
+    <link href="/poncho/css/icono-arg.css" rel="stylesheet"></head>
 
-    <link href="css/style.css" rel="stylesheet"></head>
+    <link href="/css/style.css" rel="stylesheet"></head>
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.18/r-2.2.2/datatables.min.css"/>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
@@ -22,9 +22,12 @@
 <body>
     {{> header}}
     <main>
+        {{#if hasJumbotron}}
+            {{> jumbotron jumbotron_text=jumbotron_text jumbotron_title=jumbotron_title}}
+        {{/if}}
         <div class="container">
             {{{body}}}
-        </div>
+        </div>  
     </main>
     {{> footer}}
 </body>

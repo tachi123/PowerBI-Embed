@@ -1,12 +1,10 @@
 import express from 'express';
 import { create } from 'express-handlebars';
 import passport from './config/passport.js'; // Importa la configuración de Passport
-import dotenv from 'dotenv';
+import config from './config/config.js';
 import __dirname from './utils.js';
 import session from 'express-session';
 import handlebars from 'handlebars';
-
-dotenv.config();
 
 const app = express();
 
@@ -45,9 +43,11 @@ app.use(passport.session());
 
 // Rutas
 import indexRoutes from './routes/index.router.js';
+import sessionRoutes from './routes/session.router.js';
 app.use('/', indexRoutes);
+app.use('/auth', sessionRoutes);
 
 
 // Iniciar el servidor
-const PORT = process.env.PORT || 3000;
+const PORT = config.PORT || 3000;
 app.listen(PORT, () => console.log(`Servidor en puerto ${PORT}`));

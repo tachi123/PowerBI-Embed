@@ -1,13 +1,11 @@
 import { google } from 'googleapis';
-import dotenv from 'dotenv';
-
-dotenv.config();
+import config from '../config/config.js';
 
 export const getSheetData =  async (spreadsheetId, range) => {
     const auth = new google.auth.GoogleAuth({
         credentials: {
-            client_email: process.env.GOOGLE_CLIENT_EMAIL,
-            private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n')
+            client_email: config.google_client_email,
+            private_key: config.google_private_key
         },
         scopes: "https://www.googleapis.com/auth/spreadsheets.readonly"
     });
